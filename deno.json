@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "strict": true
+  },
+  "name": "@aricart/runtime",
+  "version": "0.0.1",
+  "exports": {
+    ".": "./mod.ts"
+  },
+  "publish": {
+    "include": [
+      "./**/*"
+    ],
+    "exclude": [
+      "./test.ts"
+    ]
+  }
+}
