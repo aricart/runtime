@@ -24,7 +24,7 @@ jobs:
           deno-version: 2.x
 
       - name: Run tests
-        run: deno test --allow-all test.ts
+        run: deno test
 
       - name: Check types
         run: deno check mod.ts denoruntime.ts noderuntime.ts
