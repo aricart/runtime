@@ -1,4 +1,4 @@
-import { assertEquals, assertExists } from "jsr:@std/assert";
+import { assertEquals, assertExists } from "@std/assert";
 import { getRuntime } from "./mod.ts";
 import type { Runtime } from "./mod.ts";
 
@@ -245,14 +245,14 @@ Deno.test("stdout and stderr can write multiple lines", async () => {
   runtime.stderr = originalStderr;
 });
 
-Deno.test("runtime interface can be used for mocking", async () => {
+Deno.test("runtime interface can be used for mocking", () => {
   // create a mock runtime for testing
   const mockRuntime: Runtime = {
     args: () => ["--test", "arg"],
-    stdout: (s: string) => {},
-    stderr: (s: string) => {},
-    exit: (code: number) => {},
-    signal: (name, cb) => {},
+    stdout: (_s: string) => {},
+    stderr: (_s: string) => {},
+    exit: (_code: number) => {},
+    signal: (_name, _cb) => {},
   };
 
   assertEquals(mockRuntime.args(), ["--test", "arg"]);
